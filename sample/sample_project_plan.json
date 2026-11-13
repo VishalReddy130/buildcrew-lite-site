@@ -1,0 +1,68 @@
+{
+  "project": {
+    "name": "Inventory API",
+    "description": "A fictional example used to demonstrate dependency-aware task coordination."
+  },
+  "tasks": [
+    {
+      "id": "INV-001",
+      "title": "Define inventory data model",
+      "owner_role": "architect",
+      "priority": "P0",
+      "status": "done",
+      "dependencies": [],
+      "description": "Define inventory item fields and reorder threshold semantics.",
+      "acceptance_criteria": ["Item fields are documented.", "Threshold semantics are explicit."]
+    },
+    {
+      "id": "INV-002",
+      "title": "Implement inventory repository",
+      "owner_role": "developer",
+      "priority": "P0",
+      "status": "done",
+      "dependencies": ["INV-001"],
+      "description": "Create repository functions to list and retrieve inventory items.",
+      "acceptance_criteria": ["Items can be retrieved.", "An empty dataset is handled."]
+    },
+    {
+      "id": "INV-003",
+      "title": "Implement low-stock endpoint",
+      "owner_role": "developer",
+      "priority": "P0",
+      "status": "ready",
+      "dependencies": ["INV-002"],
+      "description": "Return items whose current quantity is at or below their reorder threshold.",
+      "acceptance_criteria": ["Items at the threshold are included.", "Items above the threshold are excluded.", "A missing item list returns an empty list."]
+    },
+    {
+      "id": "INV-004",
+      "title": "Add inventory endpoint tests",
+      "owner_role": "qa",
+      "priority": "P1",
+      "status": "backlog",
+      "dependencies": ["INV-003"],
+      "description": "Add tests for inventory API responses.",
+      "acceptance_criteria": ["Boundary conditions are covered.", "An empty inventory list is covered."]
+    },
+    {
+      "id": "INV-005",
+      "title": "Review API security",
+      "owner_role": "security reviewer",
+      "priority": "P1",
+      "status": "backlog",
+      "dependencies": ["INV-003"],
+      "description": "Review input validation and data exposure.",
+      "acceptance_criteria": ["No unintended data is exposed.", "Invalid request data is handled safely."]
+    },
+    {
+      "id": "INV-006",
+      "title": "Review release changes",
+      "owner_role": "code reviewer",
+      "priority": "P2",
+      "status": "backlog",
+      "dependencies": ["INV-004", "INV-005"],
+      "description": "Review the complete diff and release notes.",
+      "acceptance_criteria": ["The diff is scoped.", "Tests and documentation are reviewed."]
+    }
+  ]
+}
