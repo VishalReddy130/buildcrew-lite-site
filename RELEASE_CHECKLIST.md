@@ -9,7 +9,7 @@ This is an internal release gate. A checkbox should only be marked complete afte
 - [x] Document first-run setup in `START_HERE.md` and verify the extracted package in a fresh workspace.
 - [x] Document the command set and primary usage paths in `README.md`, `START_HERE.md` and `docs/QUICK_DEMO.md`.
 - [x] Include a minimal example project plan.
-- [ ] Include generated example handoffs for each supported role.
+- [x] Include six CLI-generated example handoffs, one for each supported role, under `examples/handoffs/`.
 - [x] Use an explicit package allowlist and verify the archive contains no secrets, local workspace files, interpreter caches or virtual environments.
 
 ## 2. Quality checks
@@ -42,4 +42,4 @@ Describe BuildCrew Lite as a local-first workflow kit. Do not describe it as an 
 
 ## Current status
 
-The v0.3.0 package and core first-run workflow are technically verified. The role-specific example handoff set and commercial delivery flow remain open. No checkout or payment integration is included in this release-readiness pass.
+The v0.3.0 package, six role-specific example handoffs and core first-run workflow are technically verified. Commercial delivery remains open. No checkout or payment integration is included in this release-readiness pass.
